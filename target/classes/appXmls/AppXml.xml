@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+ <bean id ="helloWorld" class= "com.domain.HelloWorld">
+ <constructor-arg value = "Hello world"></constructor-arg>
+ </bean>
+ 
+  <bean id="welcomeUser" class="com.main.WelcomeUserBean">
+ <property name="happyHourService">
+ 	<ref bean = "happyHourService"/>
+ </property>
+
+<property name="standardservice">
+ 	<ref bean = "standardservice"/>
+ </property>
+
+ </bean>
+ 
+ <bean id = "customer" class= "com.main.Customer">
+ <constructor-arg index="0" value ="Ankit"/>
+ <constructor-arg index="1" value="Kashyap"/>
+ </bean>
+ 
+ <bean id = "happyHourService" class =" com.domain.HappyHourService"/>
+ <bean id = "standardservice" class =" com.domain.Standardservice"/>
+ 
+</beans>
